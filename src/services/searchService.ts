@@ -1,0 +1,5 @@
+class SearchService {
+
+}
+
+export { SearchService }
