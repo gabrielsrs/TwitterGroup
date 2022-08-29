@@ -1,27 +1,22 @@
 import { UsersData } from '../../API/usersData';
-import { EmbedTweet } from '../../API/embedTweet';
 import { TweetsData } from '../../API/tweetsData';
-import { BuildEmbedService } from '../../some/buildEmbedService'
+import { BuildEmbedService } from './buildEmbedService'
 
 interface INames {
   usernames: Array<any>
 }
 
 class GetTweetService{
- fullDataUser: Array<any> = [];
- tweetsId: Array<any> = [];
+  fullDataUser: Array<any> = [];
+  tweetsId: Array<any> = [];
 
  async getTweets({
   usernames
  }: INames) {
-    console.log('Start1...')
-    // const usernames = ['Casimiro', 'GueibrisuelReis', 'elonmusk'];
-    
     const usersData = new UsersData();
-    const embedTweet = new EmbedTweet();
     const tweetsData = new TweetsData();
     const buildEmbedService = new BuildEmbedService();
-    
+
     function tweetsIdBuild(fullTweets: Array<any>, tweetsId: Array<any>): void {
       tweetsId.splice(0, tweetsId.length)
       fullTweets.forEach(
@@ -130,8 +125,8 @@ class GetTweetService{
         })).forEach((a) => {this.fullDataUser.push(a)})// do a validation if data not exist on fullDataUser
     }    
 
-    const element = await embedTweet.hook({
-      idTweets: embedValidator(this.fullDataUser, this.tweetsId)
+    const element = await buildEmbedService.hook({
+       idTweets: embedValidator(this.fullDataUser, this.tweetsId)
     })
 
     return element
