@@ -5,9 +5,10 @@ html(lang="en")
       meta(http-equiv="X-UA-Compatible", content="IE=edge")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
       script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js" integrity="sha512-YeeA/Qxn5hYdkukScTCNNOhTrv1C2RubAGButJ1rmgQwZf/HdRaCGl+JAVkqsqaNRaYNHdheiuKKuPf9mDcqKg==" crossorigin="anonymous")
 
       //- Server css
-      link(rel="stylesheet", href="/css/reset.css")
+      link(rel="stylesheet", href="/css/root.css")
       link(rel="stylesheet", href="/css/index.css")
       //- Local css
       //- link(rel="stylesheet", href="../public/css/reset.css")
@@ -17,11 +18,15 @@ html(lang="en")
 
    body
       div.all-content
-         include ../templates/header
          main.content
-            div.size
-               div.to-left
-                  div.main-content
-                     block content
-                  div.search
-                     div
+            include ../templates/header
+            div.main-content
+               nav.nav-top
+                  div.logo Main
+                  dev .
+               div.tweets
+                  block content
+            div.comments
+            div.search
+      block script
+         

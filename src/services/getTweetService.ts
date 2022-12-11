@@ -1,9 +1,10 @@
 import { UsersData } from '../../API/usersData';
 import { TweetsData } from '../../API/tweetsData';
 import { BuildEmbedService } from './buildEmbedService'
+import { Save } from './save'
 
 interface INames {
-  usernames: Array<any>
+  usernames: Array<string>
 }
 
 class GetTweetService{
@@ -16,6 +17,12 @@ class GetTweetService{
     const usersData = new UsersData();
     const tweetsData = new TweetsData();
     const buildEmbedService = new BuildEmbedService();
+    const save = new Save();
+
+    const data = save.readFile();
+    if(data){
+      data.forEach((item: object) => { this.fullDataUser.push(item) });
+    }
 
     function tweetsIdBuild(fullTweets: Array<any>, tweetsId: Array<any>): void {
       tweetsId.splice(0, tweetsId.length)
@@ -127,6 +134,10 @@ class GetTweetService{
 
     const element = await buildEmbedService.hook({
        idTweets: embedValidator(this.fullDataUser, this.tweetsId)
+    })
+
+    save.saveItem({
+      dataUser: this.fullDataUser
     })
 
     return element

@@ -1,0 +1,29 @@
+*,
+*:after,
+*:before {
+ margin: 0;
+ padding: 0;
+
+ text-decoration: none;
+ box-shadow:border-box;
+ font-family: "Poppins", sans-serif;
+}
+
+:root {
+ --white: #FFFFFF; /*background color*/
+ --blue: #1D9BF0; /*main bluee*/
+ --black-blue: #0f1419; /*main text*/
+ --grey-white: #f7f9f9; /*right contents*/
+ --light-grey: #4c5c68; /*tiny text*/
+ --light-clay: #ebebeb;
+ --transparent-black: #00000008; /*hover main cards*/
+ --transparent-grey: #0f14191a; /*hover left menu*/
+}
+
+body{
+ font-size: 100%;
+ list-style-type: none;
+ background: var(--white);
+ overflow-x: hidden;
+ display: flex;
+}
