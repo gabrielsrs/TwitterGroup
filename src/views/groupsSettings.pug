@@ -1,0 +1,32 @@
+extends index.pug
+
+block head
+  link(rel="stylesheet", href="/css/groupsSettings.css")
+
+block content
+  each value, key in groups
+    div.all
+      div.up
+        div.group-name
+          span= key
+        div.toggle
+      div.down
+        div.down-elements
+          div.search-user
+            label(for="username", id="user-tag") @
+            input(class="username", type="text", id="username", placeholder="Buscasr usuário", autocomplete="off")
+            button(class="validate-user", type="button") Buscar
+          ul.group-users
+            each info in value
+              li.user
+                img(class="profile-picture", src=`${info.profile_image_url}`)
+                dev.user-text
+                  span.name= info.name
+                  span.arroba= "@" + info.username 
+                div.delete
+          div.save
+            div.save-text
+              span Save
+
+block script
+ script(type="text/javascript" src="/js/groupSettings.js")

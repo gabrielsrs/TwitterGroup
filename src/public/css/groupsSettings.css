@@ -1,0 +1,177 @@
+.all {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+ border: 1px solid #ccc;
+ border-radius: 25px;
+ margin: 10px 0;
+}
+
+.up {
+ display: flex;
+ height: 50px;
+ justify-content: space-between;
+ align-items: center;
+ padding: 10px;
+ cursor: pointer;
+}
+
+.group-name {
+ display: flex;
+ align-items: center;
+ font-size: 2rem;
+ margin-right: 10px;
+}
+
+.toggle {
+ display: flex;
+ width: 5px;
+ height: 5px;
+ background-color: var(--black-blue);
+ margin: 10px;
+}
+
+.down {
+ width: 100%;
+}
+
+.down-elements {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ width: 100%;
+ /* height: 200px; */
+}
+
+.search-user {
+ display: flex;
+ width: 100%;
+ height: 40px;
+ justify-content: space-around;
+}
+
+#user-tag {
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+ width: 5%;
+ height: 30px;
+ padding: 5px;
+ background: var(--grey-white);
+}
+
+.username {
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+ width: 75%;
+ height: 30px;
+ background: var(--grey-white);
+ padding: 5px;
+ border: none;
+ outline: none;
+}
+
+.validate-user {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 20%;
+ height: 40px;
+ border: none;
+ cursor: pointer;
+ background: var(--grey-white);
+}
+
+.group-users {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: flex-start;
+ width: 100%;
+ position: relative;
+}
+
+.user {
+ display: flex;
+ align-items: center;
+ position: relative;
+ height: 50px;
+ padding: 5px;
+ /* border: 3px solid var(--grey-white); */
+ background-color: var(--light-grey);
+ border-radius: 30px;
+ margin: 5px;
+}
+
+.profile-picture {
+ width: 45px;
+ height: 45px;
+ border-radius: 50px;
+}
+
+.user-text {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ margin: 10px;
+}
+
+.name {
+ font-size: 1.3rem;
+}
+
+.arroba {
+ font-size: 0.7rem;
+}
+
+.delete::before {
+ content: "";
+ width: 20px;
+ height: 2px;
+ background-color: var(--black-blue);
+ display: block;
+ transform: rotate(-45deg);
+ position: absolute;
+}
+
+.delete {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 20px;
+ height: 20px;
+ position: relative;
+ margin-right: 10px;
+ cursor: pointer;
+}
+
+.delete::after {
+ content: "";
+ width: 20px;
+ height: 2px;
+ background-color: var(--black-blue);
+ display: block;
+ transform: rotate(45deg);
+ position: absolute;
+}
+
+.save {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+ height: 50px;
+}
+
+.save-text {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 90%;
+ height: 40px;
+ border-radius: 30px;
+ background-color: var(--blue);
+ cursor: pointer;
+ margin: 10px;
+}

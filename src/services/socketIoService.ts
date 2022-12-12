@@ -1,0 +1,5 @@
+class SocketIoService {
+
+}
+
+export { SocketIoService }

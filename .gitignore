@@ -169,3 +169,6 @@ dist
 #source code
 some/
 API/config/apiKey.ts
+
+#data
+data/
