@@ -2,6 +2,7 @@ extends index.pug
 
 block head
   link(rel="stylesheet", href="/css/groupsSettings.css")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js", integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==", crossorigin="anonymous" referrerpolicy="no-referrer")
 
 block content
   each value, key in groups
@@ -10,12 +11,12 @@ block content
         div.group-name
           span= key
         div.toggle
-      div.down
+      div.down(hidden)
         div.down-elements
-          div.search-user
+          form(class="search-user", onsubmit="event.preventDefault()")
             label(for="username", id="user-tag") @
-            input(class="username", type="text", id="username", placeholder="Buscasr usuário", autocomplete="off")
-            button(class="validate-user", type="button") Buscar
+            input(class="username", type="text", placeholder="Buscasr usuário", autocomplete="off")
+            button(class="validate-user", type="submit") Buscar
           ul.group-users
             each info in value
               li.user
@@ -24,9 +25,7 @@ block content
                   span.name= info.name
                   span.arroba= "@" + info.username 
                 div.delete
-          div.save
-            div.save-text
-              span Save
 
 block script
- script(type="text/javascript" src="/js/groupSettings.js")
+  script(type="module", src="/path/to/js.cookie.mjs")
+  script(type="text/javascript" src="/js/groupSettings.js")

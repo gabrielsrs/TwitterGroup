@@ -3,6 +3,7 @@ import { UsersData } from "../../API/usersData";
 
 class GroupSettingsController {
  async handle(request: Request, response: Response) {
+  try {
   const reqCookie = request.cookies['groups']
   const groups = JSON.parse(reqCookie)
 
@@ -23,6 +24,11 @@ class GroupSettingsController {
   return response.render('groupsSettings', { 
    groups: result
   })
+  } catch (err) {
+   return response.render('groupsSettings', {
+    groups: []
+   })
+  }
  }
 }
 
