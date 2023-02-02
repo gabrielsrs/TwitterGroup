@@ -7,13 +7,13 @@ class BuildEmbedService {
  async hook({
   idTweets
  }: ITweets) {
-  const url = [];
+  const urls = [];
 
   for(const tweet of await idTweets) {
-   url.push(`blockquote class="twitter-tweet"><a href="https://twitter.com/${tweet.username}/status/${tweet.id}"></a></blockquote`)
+   urls.push(`blockquote class="twitter-tweet"><a href="https://twitter.com/${tweet.username}/status/${tweet.id}"></a></blockquote`)
   }
 
-  return url
+  return urls
  }
 }
 
